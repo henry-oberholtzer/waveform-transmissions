@@ -2,38 +2,11 @@
 % for the document class was done by Sam Noble (SN), as well as this
 % template. Later comments etc. by Ben Salzberg (BTS). Additional
 % restructuring and APA support by Jess Youngberg (JY).
-% Your comments and suggestions are more than welcome; please email
-% them to cus@reed.edu
-%
-% See http://web.reed.edu/cis/help/latex.html for help. There are a 
-% great bunch of help pages there, with notes on
-% getting started, bibtex, etc. Go there and read it if you're not
-% already familiar with LaTeX.
-%
-% Any line that starts with a percent symbol is a comment. 
-% They won't show up in the document, and are useful for notes 
-% to yourself and explaining commands. 
-% Commenting also removes a line from the document; 
-% very handy for troubleshooting problems. -BTS
 
-% As far as I know, this follows the requirements laid out in 
-% the 2002-2003 Senior Handbook. Ask a librarian to check the 
-% document before binding. -SN
-
-%%
-%% Preamble
-%%
-% \documentclass{<something>} must begin each LaTeX document
 \documentclass[12pt,twoside]{reedthesis}
-% Packages are extensions to the basic LaTeX functions. Whatever you
-% want to typeset, there is probably a package out there for it.
-% Chemistry (chemtex), screenplays, you name it.
-% Check out CTAN to see: http://www.ctan.org/
-%%
 \usepackage{graphicx,latexsym} 
 \usepackage{amssymb,amsthm,amsmath}
 \usepackage{longtable,booktabs,setspace} 
-\usepackage{chemarr} %% Useful for one reaction arrow, useless if you're not a chem major
 \usepackage[hyphens]{url}
 \usepackage{rotating}
 \usepackage{adjustbox} %% for two page image
@@ -43,13 +16,9 @@
 \usepackage{caption}
 \usepackage{afterpage}
 \usepackage[strict]{changepage} %% for two page image
-%\usepackage{natbib}
-% Comment out the natbib line above and uncomment the following two lines to use the new 
-% biblatex-chicago style, for Chicago A. Also make some changes at the end where the 
-% bibliography is included. 
 \usepackage{biblatex-chicago}
-\addbibresource{thesis.bib}
-\addbibresource{Discography.bib}
+\addbibresource{./thesis.bib}
+\addbibresource{./Discography.bib}
 
 \setcounter{totalnumber}{1}
 \setcounter{topnumber}{1}
@@ -62,10 +31,10 @@
 \makeatletter
 \renewcommand{\@chapapp}{}% Not necessary...
 \newenvironment{chapquote}[2][2em]
-  {\setlength{\@tempdima}{#1}%
-   \def\chapquote@author{#2}%
-   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
-   \itshape}
+  {\setlength{\@tempdima}{#1}
+  \def\chapquote@author{#2}
+  \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+  \itshape}
   {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
 \makeatother
 % epigraph
@@ -74,48 +43,28 @@
 \usepackage{etoolbox}
 \AtBeginEnvironment{quote}{\singlespacing\small}
 
-
-% \usepackage{charter} % other fonts are available like times, bookman, charter, palatino
-
 \title{Waveform Transmissions: Minimalism and Dynamic Expression in Techno}
 \author{Henry William Oberholtzer}
-% The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
 \date{May 2021}
 \division{The Arts}
 \advisor{Kirsten Volness}
-%If you have two advisors for some reason, you can use the following
-%\altadvisor{Your Other Advisor}
-%%% Remember to use the correct department!
 \department{Music}
-% if you're writing a thesis in an interdisciplinary major,
-% uncomment the line below and change the text as appropriate.
-% check the Senior Handbook if unsure.
-%\thedivisionof{The Established Interdisciplinary Committee for}
-% if you want the approval page to say "Approved for the Committee",
-% uncomment the next line
-%\approvedforthe{Committee}
 
 \setlength{\parskip}{0pt}
 \raggedbottom
-%%
-%% End Preamble
-%%
-%% The fun begins:
+
 \begin{document}
 
-  \maketitle
-  \frontmatter % this stuff will be roman-numbered
-  \pagestyle{empty} % this removes page numbers from the frontmatter
-
-% Acknowledgements (Acceptable American spelling) are optional
-% So are Acknowledgments (proper English spelling)
-    \chapter*{Acknowledgements}
+\maketitle
+\frontmatter
+\pagestyle{empty}
+\chapter*{Acknowledgements}
 
 Kirsten Volness, I could not have written this thesis without your knowledge, guidance, and attention to detail. Thank you for being a great professor, advisor, and friend.
 
-Josiah Oberholtzer, your generosity and friendship has influenced me so much, thank you for sharing your wisdom with me. Marek Poliks, your advising for the Kahan Fellowship helped me see music as a fluid, moving texture, and changed how I write music for the better. 
+Josiah Oberholtzer, your generosity and friendship has influenced me so much, thank you for sharing your wisdom with me. Marek Poliks, your advising for the Kahan Fellowship helped me see music as a fluid, moving texture, and changed how I write music for the better.
 
-Laurie Duffy, your vibrant artwork helped my composition come into its own, I cannot emphasize enough how much I treasure our friendship. 
+Laurie Duffy, your vibrant artwork helped my composition come into its own, I cannot emphasize enough how much I treasure our friendship.
 
 Delaney Neal, your unwavering support, encouragement, and sharp editing helped make this thesis what it is. I am so grateful for you and the joy you bring to my life.
 
@@ -129,44 +78,35 @@ I would not be here writing this thesis without my family: my parents, Beth and 
 ---\emph{Henry Oberholtzer, April 28th 2021}
 
 
-% The preface is optional
-% To remove it, comment it out or delete it.
-%    \chapter*{Preface}
-% To be written...
-	
 
-    \tableofcontents
-% if you want a list of tables, optional
-%   \listoftables
-% if you want a list of figures, also optional
-    \listoffigures
+\tableofcontents
 
-% The abstract is not required if you're writing a creative thesis (but aren't they all?)
-% If your abstract is longer than a page, there may be a formatting issue.
-   \chapter*{Abstract}
+\listoffigures
+
+\chapter*{Abstract}
 
 
 This thesis looks at how minimalist concepts, established by composers and visual artists in the 1960s, inform the expressive techniques of techno in the 1990s. The first chapter discusses the aesthetic sensibilities of artists like Sol LeWitt, Carl Andre, Steve Reich and Philip Glass, and how their influence was carried into the 1980s by artists like Laurie Anderson, Brian Eno, and the album \emph{E2-E4} by Manuel G{\"o}ttsching. Reaching the birth of techno in the late 1980s, the collective Underground Resistance begins to establish a style of ``minimal'' techno with industrial, repetition-focused aesthetics. As minimal techno gains global traction, similarities to minimalist composers become more apparent. To understand how minimalist concepts are implemented in techno, recordings by Plastikman, Subsonic, and Basic Channel are analyzed in the second chapter. The analysis is focused on the use of timbre, space, volume, and structure as key methods of musical expression. These methods are demonstrated to be just as capable of creating intrigue as pitch and rhythm. In the third chapter, I discuss my own compositions, informed by techno, acid house, and the vinyl record. My two pieces implement musical features discussed in the previous chapters and help me determine what minimalism means for my own work as an artist. I conclude by recognizing minimalism as a creative process focused on expanding small gestures, rather than a specific aesthetic goal.
 
-	\chapter*{Dedication}
+\chapter*{Dedication}
 To all who work to make underground dance music a space for everyone.
 
-  \mainmatter % here the regular arabic numbering starts
-  \pagestyle{fancyplain} % turns page numbering back on
+\mainmatter % here the regular arabic numbering starts
+\pagestyle{fancyplain} % turns page numbering back on
 
 %The \introduction command is provided as a convenience.
 %if you want special chapter formatting, you'll probably want to avoid using it altogether
 
-    \chapter*{Introduction}
-         \addcontentsline{toc}{chapter}{Introduction}
-	\chaptermark{Introduction}
-	\markboth{Introduction}{Introduction}
-	% The three lines above are to make sure that the headers are right, that the intro gets included in the table of contents, and that it doesn't get numbered 1 so that chapter one is 1.
-	
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\chaptermark{Introduction}
+\markboth{Introduction}{Introduction}
+% The three lines above are to make sure that the headers are right, that the intro gets included in the table of contents, and that it doesn't get numbered 1 so that chapter one is 1.
+
 \onehalfspacing
 
 \begin{chapquote}{Jeff Mills}
-``If you put the needle at the beginning of a record and you just simply let it play and you stand back, somewhere within that time frame, someone’s going to scream, because the music, it just doesn’t change.''
+	``If you put the needle at the beginning of a record and you just simply let it play and you stand back, somewhere within that time frame, someone’s going to scream, because the music, it just doesn’t change.''
 \end{chapquote}
 
 Detroit techno DJ Jeff Mills made this observation in 1998 at Red Bull Music Academy Berlin, while discussing the impact of minimal techno on an audience.\footnote{\cite{schmidtJeffMillsLecture1998a}} Mill's statement raises the question of how music that ``just doesn't change'' can be a foundation for musical and sonic expression that are not reliant on changes in pitch and rhythm. To understand this I examine how small musical phrases become part of larger musical gestures and structures, and in doing so determine how minimalism can be a compositional approach in techno.
@@ -186,7 +126,7 @@ Two of my own pieces will be discussed in the last chapter, a culmination of my 
 
 % \doublespacing
 
-    \chapter{Minimalism}
+\chapter{Minimalism}
 
 The question of how ``minimalist'' came to describe parts of techno will be examined in this chapter by exploring a thirty year period in modern minimalism. This period ranges from the 1960s visual artists and composers, and ends at the proliferation of minimal techno in the 1990s. With each generation of minimalism, certain aesthetic ideas are carried through, many of which begin in the 1960s.
 
@@ -198,21 +138,21 @@ The avant-garde ``minimal art'' movement of the 1960s was influential in shaping
 In minimalist sculpture, a simple geometric form will pair with a pattern of repetition. From that seed, a larger piece can be unfurled, with even the largest works based on only one or two driving concepts. This concept is at work in Sol LeWitt's \emph{Series 1-2-3: 47 3-Part Variations on Three Different Kinds of Cubes} (1968). As shown in Figure \ref{fig:sol}, three different wooden cubes, a complete cube, one with five faces, and one with four, are arranged in six stacks. Variations are made with systematic changes to the rotation and placement of the cubes in the tower.\footnote{\cite{lewittSeries123471968}} Systematic structure is a common feature of techno, with much written around multiples of four. The bass drum plays four times in a bar, and the bar is within a four-bar phrase. The phrase repeats four times before a change---all facilitating combination with other pieces of music that are based on the same basic system.
 
 \begin{figure}[htbp]
-\begin{centering} 
-\includegraphics[width=4in]{Henry Thesis/Images/LeWitt_1-2-3}
-\caption{\emph{Series 1-2-3: 47 3-Part Variations on Three Different Kinds of Cubes} (1968) by Sol LeWitt}
-\label{fig:sol}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=4in]{./Images/LeWitt_1-2-3}
+		\caption{\emph{Series 1-2-3: 47 3-Part Variations on Three Different Kinds of Cubes} (1968) by Sol LeWitt}
+		\label{fig:sol}
+	\end{centering}
 \end{figure}
 
 Placing emphasis on the medium in minimal art often means the work is literal, and pieces are titled after the material they are made out of, if they are titled at all.\footnote{\cite{batchelorMinimalism1997}, 13.} The material remains unprocessed and unpainted and is more often than not an industrial product such as steel, glass or plastic. Carl Andre's \emph{144 Aluminum Square} (1967) shown in Figure \ref{fig:carl} is a perfect example of this concept.\footnote{\cite{andre144AluminumSquare1967}} One in a series of six sculptures, 144 twelve-inch squares of aluminum (or magnesium, lead, etc.) are assembled in a square on the floor to form the piece. \emph{144 Aluminum Square} engages an audience through its medium and placement. Visitors are allowed to walk over the sculpture and gain an understanding of the material through both visual and physical interaction.\footnote{\cite{144MagnesiumSquare}}
 
 \begin{figure}[htbp]
-\begin{centering} 
-\includegraphics[width=4in]{Henry Thesis/Images/Andre_144Aluminum}
-\caption{\emph{144 Aluminum Square} (1967) by Carl Andre}
-\label{fig:carl}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=4in]{./Images/Andre_144Aluminum}
+		\caption{\emph{144 Aluminum Square} (1967) by Carl Andre}
+		\label{fig:carl}
+	\end{centering}
 \end{figure}
 
 Techno also strays towards the literal in its naming conventions. Instruments produced by Roland in the early to mid 1980s are now part of what amounts to the canon of dance music and modifications of the names of these instruments have created a wealth of track titles. The sound of the Roland TR-909, TR-808, TB-303 and SH-101 are prized for their distinctive character and are key "materials" in electronic music production. Daft Punk's \emph{Revolution 909} celebrates the shuffle of TR-909 hi-hats, Tobias Von Hofsten's \emph{I Love My 808} centers the boom of the TR-808 bass drum, and Robert Hood's \emph{SH.101} for the cutting filter resonance of the SH-101.
@@ -242,11 +182,11 @@ In 1981, experimental musician and performance artist Laurie Anderson had a surp
 
 \subsubsection{E2-E4}
 
-When German guitarist Manuel G{\"o}ttsching released his fourth solo album, \emph{E2-E4} (1984) he could not anticipate how it would influence the nascent genres of house and techno.\footnote{\cite{manuelgottschingE2E41984}} In the 1970s, G{\"o}ttsching was best known as the lead of Ash Ra Tempel, a group that made its name in psych-rock and synthesizer experimentation, before it became his solo project.\footnote{\cite{AshRaTempel}} G{\"o}ttsching recorded \emph{E2-E4} in 1981, three years before it would be released. He recorded it in one take, using guitar, a drum machine and two gentle chords he programmed on a synthesizer. The album was named for a common chess opening move and the open strings of a guitar.\footnote{\cite{d.straussManuelGottsching2006}} In the years that followed \emph{E2-E4}'s release, it brought minimalism into dance music with a slew of remixes and reinterpretations. 
+When German guitarist Manuel G{\"o}ttsching released his fourth solo album, \emph{E2-E4} (1984) he could not anticipate how it would influence the nascent genres of house and techno.\footnote{\cite{manuelgottschingE2E41984}} In the 1970s, G{\"o}ttsching was best known as the lead of Ash Ra Tempel, a group that made its name in psych-rock and synthesizer experimentation, before it became his solo project.\footnote{\cite{AshRaTempel}} G{\"o}ttsching recorded \emph{E2-E4} in 1981, three years before it would be released. He recorded it in one take, using guitar, a drum machine and two gentle chords he programmed on a synthesizer. The album was named for a common chess opening move and the open strings of a guitar.\footnote{\cite{d.straussManuelGottsching2006}} In the years that followed \emph{E2-E4}'s release, it brought minimalism into dance music with a slew of remixes and reinterpretations.
 
 In \emph{E2-E4} airy synth melodies bounce and mutate over the consistent repetition of the underlying chords. Rhythmic emphasis shifts as synthesizer envelopes expand and contract while echo and delay are used for gradual changes in mix that make for unmistakable similarities between G{\"o}ttsching's recording and Eno's ambient process music. While G{\"o}ttsching did not use pre-determined musical processes like the American minimalist composers, his improvisation with the repeating background material invoked the character of minimalism.\footnote{\cite{reichWritingsMusic1974}, 11.} To listen to \emph{E2-E4} evolve over the course of an hour is a hypnotic and entrancing experience. With a free structure anchored by a four-to-the-floor bass drum, the album fit in well with the eclectic musical taste of the post-disco club scene in New York.\footnote{\cite{lawrenceSaturdayMassLarry2014}}
 
-G{\"o}ttsching's record was discovered by Larry Levan, the resident DJ at New York's Paradise Garage night club. Levan was known for his imaginative musical selections at the Garage, ranging from The Clash to The O'Jays, and he turned \emph{E2-E4} into a staple of the club.\footnote{\cite{lawrenceSaturdayMassLarry2014}} He often played the entire hour of the album uninterrupted in the early morning hours.\footnote{\cite{d.straussManuelGottsching2006}} Levan's selections also influenced the development of house music that was happening in Chicago and New York at the time. The New York variation of Chicago House, Garage House, is said to have taken its name from the sonic environment Larry Levan built at Paradise Garage.\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 35.}   
+G{\"o}ttsching's record was discovered by Larry Levan, the resident DJ at New York's Paradise Garage night club. Levan was known for his imaginative musical selections at the Garage, ranging from The Clash to The O'Jays, and he turned \emph{E2-E4} into a staple of the club.\footnote{\cite{lawrenceSaturdayMassLarry2014}} He often played the entire hour of the album uninterrupted in the early morning hours.\footnote{\cite{d.straussManuelGottsching2006}} Levan's selections also influenced the development of house music that was happening in Chicago and New York at the time. The New York variation of Chicago House, Garage House, is said to have taken its name from the sonic environment Larry Levan built at Paradise Garage.\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 35.}
 
 In 1989 Italian production outfit and record label D.F.C. (Dance Floor Corporation) caught on to \emph{E2-E4}'s club potency. The label licensed an eight-bar sample of \emph{E2-E4} from G{\"o}ttsching and took to the studio.\footnote{\cite{d.straussManuelGottsching2006}} D.F.C. reinforced the sample with a house rhythm, percussive piano chords and swirling synth arpeggios. Echoing bird calls, ocean sound effects, and breathy vocals in Spanish by Carolina Damas finished the record.\footnote{The bird call sample would also cement itself in dance music in 1989. For more: \cite{sherburneAnacondaPacificState2014}} Released as the eponymous single \emph{Sue{\~n}o Latino} it was an unabashed exotic re-interpretation of \emph{E2-E4}. ``Sue{\~n}o Latino'' took the club world by storm, charting number one on European dance charts.\footnote{\cite{d.straussManuelGottsching2006}} Alongside another 1989 dance hit, ``Pacific State'' by 808 State, ``Sue{\~n}o Latino'' defined the brief ``balearic beat'' conjuring images of warm Mediterranean beaches in Ibiza, Spain.\footnote{\cite{brewsterbillSearchBalearic2008}} Capitalizing on the track's success, a remix of ``Sue{\~n}o Latino'' was commissioned that brought \emph{E2-E4} in the creative hub of the Detroit electronic scene.
 
@@ -261,11 +201,11 @@ The movement of ``Remake Uno'' from Detroit to Germany was a common journey for 
 \subsection{Minimized Techno}
 
 \subsubsection{Belleville Three}
-Techno is often defined by a synthesized musical arrangement, and like similar forms of dance music that appeared alongside it in the mid 1980s such as house, it is often driven by a four-to-the-floor kick drum. Unlike house, which draws on soul and disco, early techno drew upon the sounds of funk and electro, a synth infused strain of hip hop. The origins of techno can be traced to three friends who grew up just outside Detroit, in the small suburban city of Belleville. The ``Belleville Three'' of Juan Atkins, Derrick May\footnote{\emph{It is important to note that as of April 2021, Derrick May faces multiple sexual harassment and assault allegations, complicating his legacy in the techno scene.} \cite{rossSevenMoreDerrick2021}} and Kevin Saunderson would move to Detroit, and there they would find a scene eager for a futuristic vision of dance music.\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 15.} 
+Techno is often defined by a synthesized musical arrangement, and like similar forms of dance music that appeared alongside it in the mid 1980s such as house, it is often driven by a four-to-the-floor kick drum. Unlike house, which draws on soul and disco, early techno drew upon the sounds of funk and electro, a synth infused strain of hip hop. The origins of techno can be traced to three friends who grew up just outside Detroit, in the small suburban city of Belleville. The ``Belleville Three'' of Juan Atkins, Derrick May\footnote{\emph{It is important to note that as of April 2021, Derrick May faces multiple sexual harassment and assault allegations, complicating his legacy in the techno scene.} \cite{rossSevenMoreDerrick2021}} and Kevin Saunderson would move to Detroit, and there they would find a scene eager for a futuristic vision of dance music.\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 15.}
 
 Paving the way for techno was the Detroit area radio show ``The Midnight Funk Association,'' hosted by The Electrifyin' Mojo, real name Charles Johnson. Credited with popularizing the sounds of electronic music among the youth of motor city, ``The Midnight Funk Association'' began broadcasting on WGPR Detroit in 1977.\footnote{\cite{zlatopolskyTheaterMindLegacy2015}} With a nightly show free from the restraints of commercial formatting, he played selections that spanned a range from Parliament Funkadelic to The B-52s and beyond. Mojo championed the music of synth-pop innovators Prince and Kraftwerk, playing full albums and rare B-sides. ``You’d sit there in a trance waiting for each record Mojo was going to play,'' said Juan Atkins.\footnote{\cite{zlatopolskyTheaterMindLegacy2015};\cite{reynoldsGenerationEcstasyWorld1998}, 16.} The impression ``The Midnight Funk Association'' left on Atkin's taste was also true for the club scene in Detroit, where Atkins began DJing under the name Deep Space Soundworks.\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 17;\cite{sickoTechnoRebelsRenegades2010}, 43.}
 
-In 1981 Juan Atkins and Rick ``3070'' Davis released an electro track under the name Cybotron, called ``Alleys of Your Mind.''\footnote{\cite{cybotronAlleysYourMind1981}} The single became a local success thanks to airplay support from The Electrifyin' Mojo.\footnote{\cite{zlatopolskyTheaterMindLegacy2015}} Cybotron releases carried futurist visions, while drawing on the industrial history of Detroit with tracks like ``Cosmic Cars'' and ``Techno City.''\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 18.} Cybotron would sign to San Francisco based Fantasy for an album in 1983, and after three singles for the label Atkins left the group in 1985. Starting his own label, Metroplex, Atkins' first solo release was ``No UFO's'' as Model 500.\footnote{\cite{model500NoUFO1985}} ``No UFO's'' exchanged the breakbeat of electro for a regular bass drum pulse, without losing any futuristic funk. Metroplex also became platform for releases from Kevin Saunderson, Derrick May and newcomer Eddie Fowlkes, who the trio had met in Detroit. Two years after the first Metroplex release, each member of the Belleville Three had established his own record label, Saunderson with KMS (Kevin Maurice Saunderson) and May with Transmat. 
+In 1981 Juan Atkins and Rick ``3070'' Davis released an electro track under the name Cybotron, called ``Alleys of Your Mind.''\footnote{\cite{cybotronAlleysYourMind1981}} The single became a local success thanks to airplay support from The Electrifyin' Mojo.\footnote{\cite{zlatopolskyTheaterMindLegacy2015}} Cybotron releases carried futurist visions, while drawing on the industrial history of Detroit with tracks like ``Cosmic Cars'' and ``Techno City.''\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 18.} Cybotron would sign to San Francisco based Fantasy for an album in 1983, and after three singles for the label Atkins left the group in 1985. Starting his own label, Metroplex, Atkins' first solo release was ``No UFO's'' as Model 500.\footnote{\cite{model500NoUFO1985}} ``No UFO's'' exchanged the breakbeat of electro for a regular bass drum pulse, without losing any futuristic funk. Metroplex also became platform for releases from Kevin Saunderson, Derrick May and newcomer Eddie Fowlkes, who the trio had met in Detroit. Two years after the first Metroplex release, each member of the Belleville Three had established his own record label, Saunderson with KMS (Kevin Maurice Saunderson) and May with Transmat.
 
 Over in Chicago, the growing house music scene was attracting attention from British and European record labels. A{\&}R scouts searching for talent realized that records coveted by Chicago DJs were being produced by musicians in Detroit.\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 23.} Neil Rushton, an A{\&}R for Virgin Records, saw potential in the Detroit sound, and began to work on assembling a compilation.
 
@@ -280,11 +220,11 @@ The sound of the label was more intense than the radio friendly techno present o
 Underground Resistance did not shy away from political engagement either. With releases like \emph{Acid Rain}, and \emph{Riot} UR addressed the social, environmental and political realities that faced Black people in Detroit. \emph{Message To The Majors} (1992) targeted critiques at both the Detroit Police Force and major record labels. "Message to all murderers on the Detroit Police Force - We'll see you in hell!" read the release's artwork, as seen in Figure \ref{fig:messagetothemajors}. A sample from EPMD's track "Crossover," which critiqued pop crossovers in hip hop, was looped over the beat.\footnote{\cite{undergroundresistanceMessageMajors1992a}} Releases of this kind lead to favourable comparisons with hip hop group Public Enemy and set UR apart from other dance labels.\footnote{\cite{sickoTechnoRebelsRenegades2010}, 100.}
 
 \begin{figure}[htbp]
-\begin{centering} 
-\includegraphics[width=3in]{Henry Thesis/Images/message_to_the_majors}
-\caption{Art from Underground Resistance - \emph{Message To The Majors} (1992)}
-\label{fig:messagetothemajors}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=3in]{./Images/message_to_the_majors}
+		\caption{Art from Underground Resistance - \emph{Message To The Majors} (1992)}
+		\label{fig:messagetothemajors}
+	\end{centering}
 \end{figure}
 
 The label fought against convention in more unusual ways as well. Numerous Underground Resistance releases were cut so the music played from innermost groove of the record to the outside. Other releases were interspersed with locked groove loops that distilled techno down to endless repetitions of one-bar sequences.\footnote{\cite{x-102OBXA1992}} These locked grooves came alive in the hands of a DJ like Jeff Mills who could use them as modular form of composition in his DJ sets.
@@ -298,7 +238,7 @@ Hood would release one of the defining albums for Detroit techno in 1994 with \e
 The discovery that drove the repetitive, minimalist techno, was that when techno refrained from change, it was able to incite a change in an audience. Again speaking in 1998, Jeff Mills reflected on how he and Robert Hood approached the concept and its use in the context of a club.
 
 \begin{quote}
-   We discussed the idea of, in terms of time, how long it takes for the people to really get excited listening to the same sequence over and over again. It was about two-and-a-half to three minutes. If you put the needle at the beginning of a record and you just simply let it play and you stand back, somewhere within that time frame, someone’s going to scream, because the music, it just doesn’t change. And because you know that it doesn’t change you become more relaxed. And if you become more relaxed, then you know that you can move your body much better if you don’t know what to anticipate. It brings this excitement.\footnote{\cite{schmidtJeffMillsLecture1998a}}
+	We discussed the idea of, in terms of time, how long it takes for the people to really get excited listening to the same sequence over and over again. It was about two-and-a-half to three minutes. If you put the needle at the beginning of a record and you just simply let it play and you stand back, somewhere within that time frame, someone’s going to scream, because the music, it just doesn’t change. And because you know that it doesn’t change you become more relaxed. And if you become more relaxed, then you know that you can move your body much better if you don’t know what to anticipate. It brings this excitement.\footnote{\cite{schmidtJeffMillsLecture1998a}}
 \end{quote}
 
 In this situation, the DJ becomes an operator in a push and pull dynamic, deciding how long dancers can be familiar with the track. Once the excitement of the familiar is reached, it can be replaced with the excitement of difference. Mills and Hood could allow dancers to reach a trance-like state and then pull them out of it. With minimalism Hood wanted to ``have that one guy in the back of the room just lose it and just start to scream and almost catching the holy ghost. That was my whole focus.''\footnote{\cite{burnsRobertHoodLecture2014}} Others in the techno scene also began to see the potency of heightened repetition as a powerful tool in dance music. From 1993 onward an increasing number of artists inside and out of Detroit began to release techno that built upon this concept.
@@ -309,7 +249,7 @@ In this situation, the DJ becomes an operator in a push and pull dynamic, decidi
 
 Richie Hawtin became another key player in the minimal techno sound, coming from Windsor, Ontario, just across the lake from Detroit.\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 225.} Active since the late 80s as DJ, he ran somewhat in the same circles as the Underground Resistance crew. In 1990 Hawtin founded Plus 8 Records with fellow Canadian DJ John Acquaviva. His first release on the label was \emph{Elements of Tone} as States of Mind, a record that drew upon the bass heavy UK ``bleep'' techno sound.\footnote{\cite{statesofmindElementsTone1990}} After a string of releases, in groups and solo, Hawtin started releasing music under the name Plastikman, which became his most influential project.
 
-Plastikman began in 1993 with the album \emph{Sheet One} and two singles, the percussion-focused \emph{Spastik} and the slowly mutating \emph{Krakpot}.\footnote{\cite{plastikmanSheetOne1993};\cite{plastikmanSpastik1993};\cite{plastikmanKrakpot1993}} The production process for Plastikman records was as elastic as ``plastik'' implied. Similar to Manuel G{\"o}ttsching improvising \emph{E2-E4} Hawtin improvised with his synthesizers for over an hour at a time and edited down the final results to fit on a record.\footnote{\cite{burnsRichieHawtinLecture2013}} 
+Plastikman began in 1993 with the album \emph{Sheet One} and two singles, the percussion-focused \emph{Spastik} and the slowly mutating \emph{Krakpot}.\footnote{\cite{plastikmanSheetOne1993};\cite{plastikmanSpastik1993};\cite{plastikmanKrakpot1993}} The production process for Plastikman records was as elastic as ``plastik'' implied. Similar to Manuel G{\"o}ttsching improvising \emph{E2-E4} Hawtin improvised with his synthesizers for over an hour at a time and edited down the final results to fit on a record.\footnote{\cite{burnsRichieHawtinLecture2013}}
 
 As a relative outsider to the tight knit Detroit scene, Hawtin saw his early work as an attempt to fuse his inspirations, the futuristic techno of Detroit and the hypnotic acid house of Chicago.\footnote{\cite{burnsRichieHawtinLecture2013}} Hawtin was not the only one involved in the the Detroit scene to be inspired from afar. In Germany, where Detroit techno was finding a strong audience, the duo Basic Channel began to expand upon the sound by melding it with production techniques from dub-reggae.
 
@@ -321,11 +261,11 @@ Von Oswald and Ernestus were not strangers in techno, having built strong connec
 The first Basic Channel release was the searing ``Enforcement'' (1993).\footnote{\cite{cyrusEnforcement1993}} The original mix of \emph{Enforcement} clocked in at 150 beats per minute and lasted just over thirteen minutes. A relentless and brutal track, as Figure \ref{fig:enforcement} attests, it was a clear nod to the intensity of Underground Resistance. Jeff Mills was brought on to provide the \emph{Mills Mix} remix on the B-side. After \emph{Enforcement}, delay effects started to become a larger part of the Basic Channel palette. Cascading chords echoes were central to ``Phylyps Trak,'' ``Lyot Rmx'' and ``Q 1.1.''\footnote{\cite{basicchannelPhylypsTrak1993}; \cite{basicchannelLyotRmx1993}; \cite{basicchannelQ111993}} Restraint in the use of echo was of equal importance, in order for every instrument to hold a place in the cavernous soundscape.
 
 \begin{figure}[htbp]
-\begin{centering} 
-\includegraphics[width=5in]{Henry Thesis/Images/enforcement_review}
-\caption{Discogs review of \emph{Enforcement}}
-\label{fig:enforcement}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=5in]{./Images/enforcement_review}
+		\caption{Discogs review of \emph{Enforcement}}
+		\label{fig:enforcement}
+	\end{centering}
 \end{figure}
 
 The B-side of \emph{Inversion} (1994), ``Presence'' is the most unusual of the Basic Channel releases. In the track a synth plays in counterpoint with an echo for 20 minutes. ``Presence'' stands out as having a more direct connection with early ambient recordings than beat-driven techno.\footnote{\cite{cyrusInversion1994}} Not only was it an odd piece of music for a techno label, it also featured the inside-out playback trickery that Underground Resistance used. This was the work of National Sound Corporation (NSC), a record store turned mastering studio that catered to the needs of the Detroit producers and was adept at making unusual records. Basic Channel's work with NSC also showed how connected they were to the Detroit scene.\footnote{\cite{sickoTechnoRebelsRenegades2010}, 109-110.}
@@ -333,12 +273,12 @@ The B-side of \emph{Inversion} (1994), ``Presence'' is the most unusual of the B
 The abstract quality of Basic Channel extended to their mysterious label art, which was void of almost all identifying information. With each successive release on the label the circle-wrapped logo was processed to beyond legibility. Eventually it became only understandable as a symbol of the label, as figure \ref{fig:bclogo} demonstrates.
 
 \begin{figure}[htbp]
-\begin{centering} 
-\includegraphics[width=2in]{Henry Thesis/Images/phylyps_trak}
-\includegraphics[width=2in]{Henry Thesis/Images/phylyps_trak_ii}
-\caption{Changes to the Basic Channel logo between \emph{Phylyps Trak} (1993) and \emph{Phylyps Trak II} (1994)}
-\label{fig:bclogo}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=2in]{./Images/phylyps_trak}
+		\includegraphics[width=2in]{./Images/phylyps_trak_ii}
+		\caption{Changes to the Basic Channel logo between \emph{Phylyps Trak} (1993) and \emph{Phylyps Trak II} (1994)}
+		\label{fig:bclogo}
+	\end{centering}
 \end{figure}
 
 This trend of either untitled or barely--named music became commonplace in minimal techno. It followed the material transparency that minimalist sculptors used, with the sound was presented without commentary. It encouraged the listener to understand the music on their own terms, like one would approach a copper square in an art gallery. As described by the contemporary 90s techno group Global Communication, ``names tend to bias the listener by pre-defining images'' and a lack of prompting ``gives the listener the freedom of imagination.''\footnote{\cite{globalcommunication76141994}}
@@ -347,10 +287,10 @@ Ending the Basic Channel releases in 1994 with ``Phylyps Trak II,'' Von Oswald a
 
 \subsubsection{Monolake}
 
-Monolake began as a collaboration between Robert Henke and Gerhard Behles, releasing \emph{Cyan} (1996) on the Chain Reaction label.\footnote{\cite{monolakeCyan1996}} After two more singles, Henke and Behles released an album, \emph{Hongkong} (1997), named for field recordings they had collected in Hong Kong.\footnote{\cite{monolakeHongkong1997}} Compared with the whispering tape-noise of Basic Channel, Monolake brought a digital sound to the label. For that matter, Henke and Behles often saw themselves as programmers rather than musicians. They started Monolake while studying computer science in Berlin, and found themselves in the gap between techno and academic computer music.\footnote{\cite{maya-roisinslaterGerhardBehlesRobert2016}} The difference between the two worlds was striking as Henke explains it: 
+Monolake began as a collaboration between Robert Henke and Gerhard Behles, releasing \emph{Cyan} (1996) on the Chain Reaction label.\footnote{\cite{monolakeCyan1996}} After two more singles, Henke and Behles released an album, \emph{Hongkong} (1997), named for field recordings they had collected in Hong Kong.\footnote{\cite{monolakeHongkong1997}} Compared with the whispering tape-noise of Basic Channel, Monolake brought a digital sound to the label. For that matter, Henke and Behles often saw themselves as programmers rather than musicians. They started Monolake while studying computer science in Berlin, and found themselves in the gap between techno and academic computer music.\footnote{\cite{maya-roisinslaterGerhardBehlesRobert2016}} The difference between the two worlds was striking as Henke explains it:
 
 \begin{quote}
-On one side the music was only possible at institutions with big computers running overnight to create one minute of sound and, on the other, you had a young, sweaty Richie Hawtin at Tresor with a 909, 808 and a cheap effects unit.\footnote{\cite{burnsMonolakeSoundScientist2012}}
+	On one side the music was only possible at institutions with big computers running overnight to create one minute of sound and, on the other, you had a young, sweaty Richie Hawtin at Tresor with a 909, 808 and a cheap effects unit.\footnote{\cite{burnsMonolakeSoundScientist2012}}
 \end{quote}
 
 The division between the technologies of academic music and club music began to dissolve as personal computers became more and more powerful. Monolake began to use the Max music programming language in their production process, and it soon replaced their analog hardware.\footnote{\cite{maya-roisinslaterGerhardBehlesRobert2016}} Using computers more, in order to perform on stage with laptops, Behles and Henke needed software that would allow them to play and manipulate audio loops. This led to the beginning of the development process for what would become the digital audio workstation Ableton Live.\footnote{\cite{maya-roisinslaterGerhardBehlesRobert2016}}
@@ -373,7 +313,7 @@ Obsessed with repetition, Rod Modell describes working on DeepChord more like am
 
 \section{Conclusion}
 
-All of these artists have made contributions to minimalism, and certain components of the minimalist aesthetic have carried through the thirty--year history. Recognizing these shared concepts is valuable to understanding techno in more detailed musical analysis. 
+All of these artists have made contributions to minimalism, and certain components of the minimalist aesthetic have carried through the thirty--year history. Recognizing these shared concepts is valuable to understanding techno in more detailed musical analysis.
 
 The use of repetition is a significant part of minimalist form, giving scale and form to a work. In minimalist art the repetitions are often static or staggered, with little room for fluid change across repeated figures. Music can more easily apply changes across repetition: a rhythmic figure will repeat where a pitch can change. Phasing music can re-contextualize the repetition of a sequence to give the impression of difference and polyphony.
 
@@ -405,11 +345,11 @@ Gradual adjustments in timbre, volume and spatial effects are critical to sustai
 The relentless resonance, slides and accents unique to the Roland TB-303 are apparent from the first beat of ``Krakpot.'' As the track progresses, the TB-303 moves through constant sonic mutations, a feature which has made the small synthesizer a staple of club music since the late 80s. The TB-303 was released by the Roland Corporation in 1982, targeted at guitarists and bands looking for a futuristic budget synthesizer.\footnote{\cite{reynoldsGenerationEcstasyWorld1998}, 31.}  Roland designed the monophonic TB-303 with two oscillators options, a nasal saw wave and a softer square wave. A simplified keyboard on the front panel allowed for input of melodic sequences up to 64 steps long, as shown in Figure \ref{fig:tb303}. Going beyond sequencing pitch and time, slide and accent parameters enhanced dynamic possibilities of the sequencer, which reached closer to the performance and groove of a human bassist.
 
 \begin{figure}[htbp]
-\begin{centering} 
-\includegraphics[width=5in]{Henry Thesis/Images/Roland_TB-303_Panel}
-\caption{Roland TB-303 Front Panel}
-\label{fig:tb303}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=5in]{./Images/Roland_TB-303_Panel}
+		\caption{Roland TB-303 Front Panel}
+		\label{fig:tb303}
+	\end{centering}
 \end{figure}
 
 The six knobs on the front of the TB-303 are its most important feature, and offer control of the synthesizer's sonic character.\footnote{\cite{simsRolandTB303Panel2008}} With these knobs the synthesizer became a playable instrument in the hands of many DJs, far more than just a programmable box.
@@ -421,26 +361,26 @@ While Roland had no intention of making the ``Transistorized Bass''-303 sound li
 
 \subsection{Timbral Expression}
 
- The TB-303 is programmed to one melodic loop for the entire duration of ``Krakpot.'' The riff, transcribed in Figure \ref{fig:krakpotbass} is centered around A, with two accented slides up to G at the end of the bar. The bass functions in a rhythmic, rather than melodic role, with no indication of tonality given other than A and G, the interval of a minor seventh. Eighth-notes and accented glides syncopate the TB-303 against the bass drum, which maintains rhythmic interest in sections like 0:00 to 4:22 where the bass drum and TB-303 are the only active elements. The resonance and filter movement of the TB-303 is amplified further through in interactions with delay and reverb effects.
+The TB-303 is programmed to one melodic loop for the entire duration of ``Krakpot.'' The riff, transcribed in Figure \ref{fig:krakpotbass} is centered around A, with two accented slides up to G at the end of the bar. The bass functions in a rhythmic, rather than melodic role, with no indication of tonality given other than A and G, the interval of a minor seventh. Eighth-notes and accented glides syncopate the TB-303 against the bass drum, which maintains rhythmic interest in sections like 0:00 to 4:22 where the bass drum and TB-303 are the only active elements. The resonance and filter movement of the TB-303 is amplified further through in interactions with delay and reverb effects.
 
 
 \begin{figure}[htbp]
-\begin{centering}
-\includegraphics[width=6in]{Henry Thesis/Images/Krakpot_bass2}
-\caption{Transcription of the TB-303 on ``Krakpot'' with bass drum}
-\label{fig:krakpotbass}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=6in]{./Images/Krakpot_bass2}
+		\caption{Transcription of the TB-303 on ``Krakpot'' with bass drum}
+		\label{fig:krakpotbass}
+	\end{centering}
 \end{figure}
 
 The TB-303 is mixed with a long reverb that places it into the space of a virtual cavern. The reverb echoes are most prominent at moments of high resonance like at 3:54. The filter resonance creates reverberant ``ghosts'' that trail off, giving the impression of additional melodic content. When the filter resonance is at a highest setting, lower frequencies of the TB-303 begin to vanish and the sound fits into the mid-range of the frequency spectrum, as at 3:27 and 7:22. As resonance decreases, the bass gains more body and returns to the lower frequencies, heard at 8:44 for instance. Moments of additional distortion and digital clipping occur at 0:53 and throughout. The tinny, disconnected nature of this distortion leads me to believe it is a consequence of overdriving the reverb unit, and doing so creates another impression of a second synthesizer voice. In a sense, these effect layers are able to create polyphony out of a monophonic instrument.
 
 The parameters of the TB-303 are never left untouched for a significant amount of time on ``Krakpot.'' Each bar might play the same musical notes, but as a whole, each bar is unique. Hawtin's recording technique is a crucial part of creating this ever-changing sound. A 2013 lecture at Red Bull Music Academy gave more insight into Hawtin's practice at the time. Speaking about recording his track ``Spastik,'' Hawtin explained his method:
 \begin{quote}
-The original song [``Spastik''] was like much of my music that I was recording at that point about a half-an-hour, 45-minute jam. Just press start, and see where it went. And usually, in those jam sessions, I would get a really good beginning and then somewhere in the middle I’d get a good jam part and then I’d have a good ending, and that’s pretty much what happened there. I think there was a little edit at the beginning, and then there was another edit to put the end on, but pretty much what you hear is what happened for those 35, 40 minutes in my studio.\footnote{\cite{burnsRichieHawtinLecture2013}}
+	The original song [``Spastik''] was like much of my music that I was recording at that point about a half-an-hour, 45-minute jam. Just press start, and see where it went. And usually, in those jam sessions, I would get a really good beginning and then somewhere in the middle I’d get a good jam part and then I’d have a good ending, and that’s pretty much what happened there. I think there was a little edit at the beginning, and then there was another edit to put the end on, but pretty much what you hear is what happened for those 35, 40 minutes in my studio.\footnote{\cite{burnsRichieHawtinLecture2013}}
 \end{quote}
 He continues with how the process evolved for later recordings:
 \begin{quote}
-    ...I always just followed that thing of getting all the machines running, even when there was some computer stuff, having some loops on the computer screen, or whatever, but then just turning it all on, and doing most of the construction and the arrangement live by moving faders and muting or turning things on the machines.\footnote{\cite{burnsRichieHawtinLecture2013}} 
+	...I always just followed that thing of getting all the machines running, even when there was some computer stuff, having some loops on the computer screen, or whatever, but then just turning it all on, and doing most of the construction and the arrangement live by moving faders and muting or turning things on the machines.\footnote{\cite{burnsRichieHawtinLecture2013}}
 \end{quote}
 
 In a recording process so free and improvised one might make reasonable comparisons with jazz. Where chord changes are chosen for jazz improvisation, a bass pattern is chosen in techno, and the TB-303 filter provides a sense of continuous movement and improvisation. However, because it is so unstable in timbre, the movement of TB-303 does not correspond to the overall energetic arc of ``Krakpot'' as much as the percussive elements do.
@@ -448,28 +388,28 @@ In a recording process so free and improvised one might make reasonable comparis
 \subsubsection{Roland TR-707}
 
 \begin{figure}[htbp]
-\begin{centering} 
-\includegraphics[width=5in]{Henry Thesis/Images/Roland_TR-707_edit}
-\caption{Roland TR-707 Front Panel}
-\label{fig:TR707}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=5in]{./Images/Roland_TR-707_edit}
+		\caption{Roland TR-707 Front Panel}
+		\label{fig:TR707}
+	\end{centering}
 \end{figure}
 
 The percussion on ``Krakpot'' comes from the Roland TR-707, a piece of studio equipment that was also adopted by house and techno producers. The TR-707 plays digital samples, which makes it more static than Roland's earlier analog synthesis-based drum machines like the TR-909 and TR-808. The bottom row of the TR-707 panel, shown in Figure \ref{fig:TR707} contains 16 buttons for inputting and programming drum patterns.\footnote{\cite{speculosDrumMachineRoland2008}} In the top right corner are 12 volume sliders, 11 for the various drum sounds and one for the master volume which Hawtin uses in combination with external effects to bring the drums to life.
 
-With careful listening, during the first four minutes one can hear a reverb tail build up and fade away around the bass drum. The effect repeats with some regularity giving subtle movement to the beginning of the recording as other percussive elements do not begin to appear until 4:22. A transcription of the rhythm is shown in Figure \ref{fig:krakpot_drums}. The hi-hats and cowbell fade in with great restraint and the short hi-hat pattern gains movement from gradual phase modulation, an effect caused by the audio signal mixing with an out-of-sync copy of itself, similar to Steve Reich's tape phasing music.\footnote{\cite{huizengaFiftyYearsSteve2015}} The phasing lends a simulated ``live'' feeling to the groove with its continuous sense of movement. A syncopated clap rhythm begins to fade in at 5:25 as delay changes the perception of percussion density, building rhythmic echoes off the clap and cowbell. Only one full drum pattern is used through the track, which stays in form with the TB-303. 
+With careful listening, during the first four minutes one can hear a reverb tail build up and fade away around the bass drum. The effect repeats with some regularity giving subtle movement to the beginning of the recording as other percussive elements do not begin to appear until 4:22. A transcription of the rhythm is shown in Figure \ref{fig:krakpot_drums}. The hi-hats and cowbell fade in with great restraint and the short hi-hat pattern gains movement from gradual phase modulation, an effect caused by the audio signal mixing with an out-of-sync copy of itself, similar to Steve Reich's tape phasing music.\footnote{\cite{huizengaFiftyYearsSteve2015}} The phasing lends a simulated ``live'' feeling to the groove with its continuous sense of movement. A syncopated clap rhythm begins to fade in at 5:25 as delay changes the perception of percussion density, building rhythmic echoes off the clap and cowbell. Only one full drum pattern is used through the track, which stays in form with the TB-303.
 
 \begin{figure}[htbp]
-\begin{centering} 
-\includegraphics[width=6in]{Henry Thesis/Images/Krakpot_Drums2}
-\caption{Drum Transcription of ``Krakpot''}
-\label{fig:krakpot_drums}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=6in]{./Images/Krakpot_Drums2}
+		\caption{Drum Transcription of ``Krakpot''}
+		\label{fig:krakpot_drums}
+	\end{centering}
 \end{figure}
 
 The gradual entrance of each percussive element keeps ``Krakpot'' from growing tired. When the crash cymbal enters 7:03, Hawtin fades it out a short 8 bars later, leaving it as an overpowering burst of energy that marks the peak moment of the piece. Percussion is drawn out of the mix from 7:27 onward, and disappears entirely by 8:22. The bass drum drops out at 8:27 and Hawtin plays the TB-303 through a short dramatic solo where the filter pulls up rumbling bass resonances to a crescendo at 9:12 before easing off. Hawtin brings the bass drum back for the final wind down at 9:27 and ``Krakpot'' ends with the bass drum, without reverb or additional percussion.
 
-As a full piece, ``Krakpot'' has one energetic arc, building up energy towards the seven minute mark and fading out gradually to the end. This single path works well for the constant bass rhythm, which is made more effective without interruption. However minimalism does not need to keep itself to a single arc of energy, and can explore building energy and tension over combinations of peaks and valleys of energy.  
+As a full piece, ``Krakpot'' has one energetic arc, building up energy towards the seven minute mark and fading out gradually to the end. This single path works well for the constant bass rhythm, which is made more effective without interruption. However minimalism does not need to keep itself to a single arc of energy, and can explore building energy and tension over combinations of peaks and valleys of energy.
 
 \newpage
 \section{Structure and Tension: ``Lost In Space'' by Subsonic}
@@ -484,11 +424,11 @@ Dynamic in structure and instrumentation are in focus through analysis of ``Lost
 ``Lost In Space'' counts eight different instruments in its arrangement, which are listed on the left column of Figure \ref{fig:lostinspace}. An additional robotic ``Lost In Space'' vocal sample repeats at semi-regular intervals. ``Lost In Space'' is based around a partial B$\flat$ Phrygian scale, with only F, G$\flat$, A$\flat$, B$\flat$ and C$\flat$ from the scale. B$\flat$ holds the melodic center in all three melodies transcribed in Figure \ref{fig:lostinspace} while generous half step movement gives an aggressive edge to the music.
 
 \begin{figure}
-\begin{centering} 
-\includegraphics[width=6in]{Henry Thesis/Images/Lost_in_Space_3}
-\caption{Transcription of ``Lost In Space''}
-\label{fig:lostinspace}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=6in]{./Images/Lost_in_Space_3}
+		\caption{Transcription of ``Lost In Space''}
+		\label{fig:lostinspace}
+	\end{centering}
 \end{figure}
 
 \subsubsection{TB-303}
@@ -508,16 +448,16 @@ An eerie, undulating, sine-wave-based string sound is the last melodic component
 \subsubsection{Roland TR-909}
 
 \begin{figure}
-\begin{centering} 
-\includegraphics[width=\columnwidth]{Henry Thesis/Images/Roland_TR-909}
-\caption{Roland TR-909 Front Panel}
-\label{fig:TR909}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=\columnwidth]{./Images/Roland_TR-909}
+		\caption{Roland TR-909 Front Panel}
+		\label{fig:TR909}
+	\end{centering}
 \end{figure}
 
 The bulk of the percussion on ``Lost In Space'' comes from the Roland TR-909. The follow up to Roland's TR-808, the TR-909 was released in 1984, and is another machine synonymous with the sound of house and techno. The TR-909 features a blend of synthesized and sampled percussion, allowing fine timbral adjustments and more ``realistic'' drum sounds compared to the TR-808.\footnote{\cite{annissInstrumentalInstruments9092016}} The controls of the TR-909 are shown in Figure \ref{fig:TR909}, and are similar to the TR-707 and TR-808, with a row of 16 buttons for programming patterns.\footnote{\cite{clusternoteRolandTR9092011}} Each instrument has dedicated knobs for controlling volume and parameters like attack, decay and pitch. These controls make performing dynamic changes easier on the TR-909 than on other drum machines, an aspect of the instrument used by artists like Jeff Mills in DJ sets and improvised performances.\footnote{\cite{millsJeffMillsExhibitionist}} On ``Lost In Space'' the TR-909 is responsible for the clean and consistent punch of the bass drum that pins down the quarter-note pulse. The TR-909 clap plays on beats two and four, and the open hi-hat fills the offbeat gaps. These rhythms are all notated on Figure \ref{fig:lostinspace}, page \pageref{fig:lostinspace}.
 
-Additional percussion comes in the form of a small burst of white noise, similar in timbre to a shaker, which pops up at the end of each bar. A delay on the noise shaker has enough feedback to sustain the signal through the bar and filter sweeps on the noise signal can be heard at moments like 11:45--11:51. A second hi-hat, with a distinct sound that lacks the lower frequency weight of the TR-909 hi-hat, plays a similar pattern to the TR-909 pattern with a sixteenth-note crescendo at the end of the bar. 
+Additional percussion comes in the form of a small burst of white noise, similar in timbre to a shaker, which pops up at the end of each bar. A delay on the noise shaker has enough feedback to sustain the signal through the bar and filter sweeps on the noise signal can be heard at moments like 11:45--11:51. A second hi-hat, with a distinct sound that lacks the lower frequency weight of the TR-909 hi-hat, plays a similar pattern to the TR-909 pattern with a sixteenth-note crescendo at the end of the bar.
 
 \subsection{Structure}
 
@@ -526,10 +466,10 @@ The structure of ``Lost In Space'' is charted in Figure \ref{fig:structure}. The
 Certain sections of the structure are more subjective than others, like at mm. 417 when the ambient pad is pulled back in the mix such that it is masked by other elements and becomes almost inaudible. My chart may not be exact as to how other listeners may hear elements coming in and out of the mix, but serves the purpose of providing an overview of the structural changes. Volume and filter automation are not included on the diagram, as it is difficult to convey on a chart of this scale. Filter changes are also not the primary object of this analysis; however both volume and filter automation are significant and will be discussed as necessary.
 
 \begin{figure}
-    \includegraphics[width=\columnwidth]{Henry Thesis/Images/STRUCTURE_FINAL_L}
-    \includegraphics[width=\columnwidth]{Henry Thesis/Images/STRUCTURE_FINAL_R}
-    \caption{Structural Analysis of ``Lost In Space'' with Volume Waveform}
-    \label{fig:structure}
+	\includegraphics[width=\columnwidth]{./Images/STRUCTURE_FINAL_L}
+	\includegraphics[width=\columnwidth]{./Images/STRUCTURE_FINAL_R}
+	\caption{Structural Analysis of ``Lost In Space'' with Volume Waveform}
+	\label{fig:structure}
 \end{figure}
 
 \subsubsection{Building and Releasing Tension}
@@ -537,9 +477,9 @@ Certain sections of the structure are more subjective than others, like at mm. 4
 
 When the ambient pad cuts out at mm. 49, a consistent pattern of 16-bar change is established. The TB-303 and TR-909 hi-hat enter at mm. 65 and the TR-909 clap has a sudden fade in at mm. 81. The secondary hi-hat disappears for four bars at mm. 93 and when it returns with refreshed rhythmic energy at mm. 97 it marks the second climb of the intro section. The ambient pad returns to the mix and all other elements at full volume and the resonance of the TB-303 climbs higher. When the clap drops out at mm. 121 (3:12) everything has built towards the entrance of the bass drum at mm. 129---better known as the beat drop.
 
-After three minutes of rising energy the bass drum finally enters. Combined with the sudden removal of the sub bass, the bass drum shifts the energy of ``Lost In Space'' significantly. The force of 150bpm comes to the forefront, crisp and clear compared to hi-hats in the the opening section. Mirroring the frenetic pace, the rate of change quickens to every eight bars between mm. 129 and 169. The sudden disappearance of the sub bass lets the TB-303 move to the forefront as the primary bass synth. The air between notes in the TB-303 pattern is also pronounced against the simpler musical backdrop, further amplifying the rhythmic pulse. 
+After three minutes of rising energy the bass drum finally enters. Combined with the sudden removal of the sub bass, the bass drum shifts the energy of ``Lost In Space'' significantly. The force of 150bpm comes to the forefront, crisp and clear compared to hi-hats in the the opening section. Mirroring the frenetic pace, the rate of change quickens to every eight bars between mm. 129 and 169. The sudden disappearance of the sub bass lets the TB-303 move to the forefront as the primary bass synth. The air between notes in the TB-303 pattern is also pronounced against the simpler musical backdrop, further amplifying the rhythmic pulse.
 
-A 24-bar breakdown starts at mm. 169, dipping the energy briefly before another bass drum section starts at mm. 193. The TB-303 envelope modulation shortens abruptly during mm. 201 (5:20), and the accented notes become more pronounced in the following bar. At mm. 241 (6:24) the sub bass starts to compete with the three other low-frequency instruments, having avoided overlap with the bass drum until now. The TB-303 loses the fight and fades out eight bars later letting the sub bass pulls to the front of the mix. The bass drum is present in the mix for progressively shorter lengths of time, from 40 bars, to 24, to 16 between mm. 193 and mm. 289 (5:07 - 7:41.) These shortened phrases are like moments of indecision before the bass drum cuts out for the breakdown and build at mm. 289. 
+A 24-bar breakdown starts at mm. 169, dipping the energy briefly before another bass drum section starts at mm. 193. The TB-303 envelope modulation shortens abruptly during mm. 201 (5:20), and the accented notes become more pronounced in the following bar. At mm. 241 (6:24) the sub bass starts to compete with the three other low-frequency instruments, having avoided overlap with the bass drum until now. The TB-303 loses the fight and fades out eight bars later letting the sub bass pulls to the front of the mix. The bass drum is present in the mix for progressively shorter lengths of time, from 40 bars, to 24, to 16 between mm. 193 and mm. 289 (5:07 - 7:41.) These shortened phrases are like moments of indecision before the bass drum cuts out for the breakdown and build at mm. 289.
 
 Beginning at mm. 257 (6:49) the reverb on the sub bass increases and the sound shifts into a different role. The dense reverb makes it hard to tell what exactly happened, my hypothesis is that unprocessed synth signal was faded out of the mix, and the reverb was left. Measure 277 (7:21) points to this change when the sub bass riff is transposed up a second octave and the dry signal fades in briefly. The TB-303 rushes back into the mix at mm. 289, reclaiming its position as the main bass synthesizer. At mm. 321 ``Lost In Space'' mirrors the phrase at mm. 129, with emphasis on the sudden disappearance of the sub bass in the previous phrase, and the same active instruments.
 
@@ -561,11 +501,11 @@ Where the previous two pieces fit within the techno and acid house frameworks, `
 In ``Phylyps Trak'' Basic Channel mixes eight different loops into a single sonic fabric, gluing together the timbre and rhythm with saturation and spatial effects. Five pitched loops cycle in and out, each with specific rhythmic and timbral characteristics. These loops combined create a dynamic pattern that is manipulated throughout the recording. Centered around G minor, ``Phylyps Trak'' emphasizes perfect fifth intervals and minor triads. The fundamental frequencies that clarify the pitch of a notes, are cut out by a high pass filter on many loops. This puts emphasis on the noisier frequencies, which define the timbre more than the tonality of each chord. As rhythmic interaction is one of the key parts of this piece, my transcription in Figure \ref{fig:phylyprytm} on \pageref{fig:phylyprytm} is a rhythmic reduction meant to clarify how the rhythms interact.
 
 \begin{figure}
-\begin{centering} 
-\includegraphics[width=6in]{Henry Thesis/Images/PhylypsTrakNotation4}
-\caption{Rhythmic Transcription of ``Phylyps Trak''}
-\label{fig:phylyprytm}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=6in]{./Images/PhylypsTrakNotation4}
+		\caption{Rhythmic Transcription of ``Phylyps Trak''}
+		\label{fig:phylyprytm}
+	\end{centering}
 \end{figure}
 
 The bass loop on Figure \ref{fig:phylyprytm} has the timbre of a throaty growl and sounds to contain more harmonic content than a single note. My guess, made by inspecting the sound on a frequency analyzer, is that the sound is created by playing two notes in harmony, one low enough that it effects the primary bass note as a low frequency oscillator. The bass also has an unusual movement across the stereo field, something avoided when making music meant to be cut to vinyl, as it can cause a needle to jump out of the groove.\footnote{\cite{hooseTurningTablesEngineering2018}, 9.}
@@ -576,7 +516,7 @@ The familiar Roland TR-909 is the percussive engine on ``Phylyps Trak,'' and Von
 
 \subsection{Structural Disorientation}
 
-In ``Phylyps Trak,'' a seamless thematic progression occurs in mix of active chord loops, accomplished through subtle changes in mix and unannounced changes in phrase that can slip past the listener. Based on recording practices in early 90s techno, the structure of ``Phylyps Trak'' was probably created live. The gradual fade-in of each loop and slow phrasing feels unlike the clear 48 bar phrases in ``Lost In Space.'' The recording is also a contemporary of ``Krakpot,'' and it is easy to infer that the same production technique of ``jam for 20 minutes or half an hour, afterwards do some editing'' as Richie Hawtin put it, would be used here.\footnote{\cite{burnsRichieHawtinLecture2013}} It becomes even more likely taking into account the Detroit connections that Basic Channel had made, through Juan Atkins, Carl Craig, and others who used the live technique Hawtin drew upon. 
+In ``Phylyps Trak,'' a seamless thematic progression occurs in mix of active chord loops, accomplished through subtle changes in mix and unannounced changes in phrase that can slip past the listener. Based on recording practices in early 90s techno, the structure of ``Phylyps Trak'' was probably created live. The gradual fade-in of each loop and slow phrasing feels unlike the clear 48 bar phrases in ``Lost In Space.'' The recording is also a contemporary of ``Krakpot,'' and it is easy to infer that the same production technique of ``jam for 20 minutes or half an hour, afterwards do some editing'' as Richie Hawtin put it, would be used here.\footnote{\cite{burnsRichieHawtinLecture2013}} It becomes even more likely taking into account the Detroit connections that Basic Channel had made, through Juan Atkins, Carl Craig, and others who used the live technique Hawtin drew upon.
 
 ``Phylyps Trak'' starts with an abrupt, noisy fade in, like that of a skipping record. The fade in, combined with syncopated rhythmic emphasis in the loop, obscures the listener's perception of the first beat. For instance, I hear beat one as the second sixteenth-note of the second bar, on the chord stab. This rhythmic deception holds until the bass drum bursts in at 0:39 and the pulse reveals the beat to be an unexpected sixteenth-note earlier. The pattern has changed in a dramatic but subtle way by altering the perceived pulse. Through repetition, the groove sounds to realigns with the bass drum, however nothing has changed. The open hi-hat fades in next and further cements the four-on-the-floor rhythm.
 
@@ -601,11 +541,11 @@ The ``minimalist'' aesthetic the pieces reflect comes in several forms. The rhyt
 \chapter{\emph{Nipper's Trip}}
 
 \begin{figure}
-\begin{centering} 
-\includegraphics[width=6in]{Henry Thesis/Images/ALBUM_ART}
-\caption{\emph{Nipper Reigns Over a New Era of Consciousness} (2021) by Laurie Duffy}
-\label{fig:albumart}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=6in]{./Images/ALBUM_ART.png}
+		\caption{\emph{Nipper Reigns Over a New Era of Consciousness} (2021) by Laurie Duffy}
+		\label{fig:albumart}
+	\end{centering}
 \end{figure}
 
 The limitations of vinyl records and the hypnotic sounds of acid techno are the largest inspirations I drew upon for my compositions ``Heaven {\&} Earth'' and ``Escitalopram.'' Vinyl twelve-inches often follow the A-side and B-side binary in dance music. The A-side is often the more club-focused track, which in this case is the corrosive techno-trance piece ``Escitalopram.'' Since the A-side is meant to sell the record, the B-side can be more experimental, and ``Heaven {\&} Earth'' is freed to explore sonic dimensions that might not work in a DJ set. Both tracks carry the calling card sounds of acid techno, the TR-909 and TB-303. In lieu of a real Roland TB-303, I used a clone called the Cyclone Analogic TT-303, and without an original analog TR-909, digital samples sufficed. Harmonic and melodic content is secondary to changes in timbre and mix on both tracks, a compositional approach inspired by the music I analyzed beforehand. Discussing the pieces and my creative process makes the most sense when done in the order in which I composed them, beginning with ``Heaven {\&} Earth.''
@@ -622,23 +562,23 @@ To create a natural progression of energy, the form was developed from a live ta
 
 After recording the TT-303, I continued to build new layers in similar takes. Percussion followed in subsequent takes---clap, hi-hat, bongos, and the ride cymbal---each with unique modulations and undulations. Most percussive layers were recorded with live application of reverb and delay effects as well.  Adding the percussion solidified the energetic path of the piece, and it allowed me to replace the bass with an alternate take. I found my the original take on the TT-303 had become too flat when put alongside the drums. Thanks to this layer by layer approach, I was able to mix the track as I recorded each part, and improvise with my past self. The bongos move through distortion as an out-of-phase, eighth-note delay slowly alters the rhythmic density. In contrast the hi-hats are sent through delay and reverb in sudden bursts in quiet moments like at 12:01.
 
-Building layers of takes was my way to adapt the live recording techniques of Plastikman and Basic Channel to my own recording process. Due to technological constraints, I only fed a stereo channel out of my mixer and without recording multiple takes I would be unable to apply EQ and compression in post-production. 
+Building layers of takes was my way to adapt the live recording techniques of Plastikman and Basic Channel to my own recording process. Due to technological constraints, I only fed a stereo channel out of my mixer and without recording multiple takes I would be unable to apply EQ and compression in post-production.
 
 With the rhythm section recorded, I moved on to the vocal sample. The phrases ``before heaven and earth'' and ``something nebulous'' are panned left and right in a staggered rhythm. The sample is truncated and edited through the track as well, altering rhythmic placement. The variations are akin to those of minimalist composers who generated rhythms and interest with spoken recordings looped into rhythmic phrases.
 
-The chord that echoes through the piece is shaped by adjustments to the filter cut-off and envelope release which lets it fit in more contexts than an unchanging sound might be able to do. The flute patch that appears at 4:19 was a sudden improvisation and brings a longer melodic contour to the piece. The flute was recorded with percussion muted, so my playing drifts around the pulse a bit, which helps to offset the strict drum machine rhythms. The flute also uses the same delay with which the TT-303, hi-hats and chord are processed. The delay was programmed on an Alesis Quadraverb as a dotted-eighth note ``ping-pong'' delay. A 10 cent de-tune that adds a wobble and long reverb are also part of the effect program, adding a greater degree of movement and modulation. By mixing different instruments into one delay, a coherent sense of space and dimension is added to the piece. 
+The chord that echoes through the piece is shaped by adjustments to the filter cut-off and envelope release which lets it fit in more contexts than an unchanging sound might be able to do. The flute patch that appears at 4:19 was a sudden improvisation and brings a longer melodic contour to the piece. The flute was recorded with percussion muted, so my playing drifts around the pulse a bit, which helps to offset the strict drum machine rhythms. The flute also uses the same delay with which the TT-303, hi-hats and chord are processed. The delay was programmed on an Alesis Quadraverb as a dotted-eighth note ``ping-pong'' delay. A 10 cent de-tune that adds a wobble and long reverb are also part of the effect program, adding a greater degree of movement and modulation. By mixing different instruments into one delay, a coherent sense of space and dimension is added to the piece.
 
 \section{``Escitalopram''}
 
 \subsection{Inspiration}
 
-``Escitalopram'' belongs in the same realm as the blistering acid techno of ``Lost In Space'' and much less the ambient dub-techno that ``Heaven {\&} Earth'' draws on. Early sketches of ``Heaven {\&} Earth'' were set at 150bpm, but the piece developed differently and I wanted to incorporate that exhilarating tempo into my work, so I revisited the tempo for the second track. Rather than gradual adjustments, sudden changes in instrumentation sustain interest, with occasional one-bar track mutes and edits. Part of the sudden nature of the pieces comes from the speed at which I wrote the track. I began ``Escitalopram'' on a Friday morning, and by Saturday afternoon I had a final structure in place. The title is a play on the prominence of substances like ecstasy, LSD, and weed, among others, that permeate rave culture and track naming conventions. Escitalopram is the scientific name of the serotonin-fuelling drug I take everyday, otherwise known as the anti-depressant Lexapro.\footnote{In particular, I found the track ``Prozac'' by Geezer and realized anti-depressants are good track titles-- \cite{geezerProzac1996}} 
+``Escitalopram'' belongs in the same realm as the blistering acid techno of ``Lost In Space'' and much less the ambient dub-techno that ``Heaven {\&} Earth'' draws on. Early sketches of ``Heaven {\&} Earth'' were set at 150bpm, but the piece developed differently and I wanted to incorporate that exhilarating tempo into my work, so I revisited the tempo for the second track. Rather than gradual adjustments, sudden changes in instrumentation sustain interest, with occasional one-bar track mutes and edits. Part of the sudden nature of the pieces comes from the speed at which I wrote the track. I began ``Escitalopram'' on a Friday morning, and by Saturday afternoon I had a final structure in place. The title is a play on the prominence of substances like ecstasy, LSD, and weed, among others, that permeate rave culture and track naming conventions. Escitalopram is the scientific name of the serotonin-fuelling drug I take everyday, otherwise known as the anti-depressant Lexapro.\footnote{In particular, I found the track ``Prozac'' by Geezer and realized anti-depressants are good track titles-- \cite{geezerProzac1996}}
 
 \subsection{Form and Process}
 
 I designed and programmed the drum pattern for ``Escitalopram'' in my Elektron Octatrack before I recorded each drum track into Ableton Live. I extended the four-bar phrase to around nine minutes, creating a block of percussion to from which to carve. Like taking a knife to a block of clay, I shaped the energy contour by taking out a bass drum here, removing ride cymbals there, and programming a fade ins when I wanted them. I also applied small edits in the form of reverses, and rhythmic hesitations---delaying kick drums and reversing ride cymbals. This percussion-first process is also the opposite of the bass-first writing process I used on ``Heaven {\&} Earth.''
 
-The bass line was happened upon almost by accident. I had programmed the riff into the TT-303 during the writing process for ``Heaven {\&} Earth'' and discarded it as too chaotic, but on ``Escitalopram'' it fell into place. My two compositions were then related by the F Phrygian theme I was exploring. I switched the TT-303 to the saw wave to get a more aggressive timbre, and match the accelerated tempo. When recording the bass, I shifted it a sixteenth note late by accident, and it fit into the rhythm even better. The bass line now began with a tie over beat one and became the final riff. I explored programmed variations of the bass, but I found that using the mute function (which truncates the duration of notes on the sequencer) and octave transposition was enough variation to create excitement at peak moments. I overdubbed a second TT-303 melody in a higher register, returning to the square wave for contrast. The second loop gives a stronger accent to the downbeat than the lower TT-303, and melodic contrast with a downward glide. 
+The bass line was happened upon almost by accident. I had programmed the riff into the TT-303 during the writing process for ``Heaven {\&} Earth'' and discarded it as too chaotic, but on ``Escitalopram'' it fell into place. My two compositions were then related by the F Phrygian theme I was exploring. I switched the TT-303 to the saw wave to get a more aggressive timbre, and match the accelerated tempo. When recording the bass, I shifted it a sixteenth note late by accident, and it fit into the rhythm even better. The bass line now began with a tie over beat one and became the final riff. I explored programmed variations of the bass, but I found that using the mute function (which truncates the duration of notes on the sequencer) and octave transposition was enough variation to create excitement at peak moments. I overdubbed a second TT-303 melody in a higher register, returning to the square wave for contrast. The second loop gives a stronger accent to the downbeat than the lower TT-303, and melodic contrast with a downward glide.
 
 The lead melody patch is a de-tuned saw wave sound similar to the ``super saw'' common to 2000s trance, which is another avenue of dance music that interests me.\footnote{\cite{turbodudeDemonstrationRolandJP80002011}}  With a dotted-eighth note rhythm, the lead circles around a two-bar, four-note melody, again in F Phrygian mode. Further syncopation is created with the same Quadraverb delay preset used on ``Heaven {\&} Earth,'' adjusted to 146 bpm.
 
@@ -649,12 +589,12 @@ The final part is a rhythmic synth layer that adds a shifting razor-sharp textur
 To create a professional end product, I commissioned my close friend Laurie Duffy to create accompanying album artwork. She is an accomplished visual artist with a vibrant and surreal style, complemented by her deft line art and singular approach.\footnote{See more of Laurie's work on her website: \url{ralpho.net}} I brought her the concept of making album art based on ``His Master's Voice'' logo used by RCA Victor, but as if the dog, Nipper, was witnessing the compelling power of the Roland TB-303 instead of the Gramophone. Laurie took this concept to new heights in her \emph{Nipper Reigns Over a New Era of Consciousness} (2021), shown in Figure \ref{fig:albumart} on \pageref{fig:albumart}. Laurie's reimagining of Nipper is compared with Francis Barraud's original \emph{His Master's Voice} in \ref{fig:dogcomparis}.\footnote{\cite{barraudHMV1898}} She incorporated visuals cues from LSD blotter paper, her own wobbling and writhing creatures, bright colors, and psychedelic visuals that have accompanied acid house and techno from time to time. Her artwork inspired me finish my compositions as well, giving me a second wind to create music which matched the energy of the artwork. Upon receiving an initial draft illustration, I finished the rough mix of ``Heaven {\&} Earth'' a few hours later, and I worked to match the energetic colors with the fervor of ``Escitalopram.''
 
 \begin{figure}[htbp]
-\begin{centering} 
-\includegraphics[width=2in]{Henry Thesis/Images/Original_Nipper}
-\includegraphics[width=2in]{Henry Thesis/Images/ALBUM_ART_DETAIL}
-\caption{\emph{His Master's Voice} (c. 1898) by Francis Barraud, and a detail from \emph{Nipper Reigns Over a New Era of Consciousness} (2021) by Laurie Duffy}
-\label{fig:dogcomparis}
-\end{centering} 
+	\begin{centering}
+		\includegraphics[width=2in]{./Images/Original_Nipper}
+		\includegraphics[width=2in]{./Images/ALBUM_ART_DETAIL}
+		\caption{\emph{His Master's Voice} (c. 1898) by Francis Barraud, and a detail from \emph{Nipper Reigns Over a New Era of Consciousness} (2021) by Laurie Duffy}
+		\label{fig:dogcomparis}
+	\end{centering}
 \end{figure}
 
 
@@ -682,33 +622,33 @@ I did not see myself as a minimalist while composing either. I had to forget I w
 For those interested, I have compiled a list of the tools I used through this project to lend further insight into my own creative process.
 \subsection{Recording}
 \begin{description}
-    \item [ASUS Intel i7 Laptop (2017)]
-    \item [Ableton Live 10 Suite] digital audio workstation
-    \item [MOTU 828mk3] audio interface
-    \item [Mackie 1604vl4] mixer
-    \item [Adam T7v] studio monitors
-    \item [Senneheiser HD-650] headphones
+	\item [ASUS Intel i7 Laptop (2017)]
+	\item [Ableton Live 10 Suite] digital audio workstation
+	\item [MOTU 828mk3] audio interface
+	\item [Mackie 1604vl4] mixer
+	\item [Adam T7v] studio monitors
+	\item [Senneheiser HD-650] headphones
 \end{description}
 \subsection{Synthesizers and Samplers}
 \begin{description}
-    \item [Akai MPC2000xl] sampler and sequencer
-    \item [Elektron Octatrack MKII] sampler and sequencer
-    \item[Korg Minilogue] polyphonic analog synthesizer
-    \item[Korg Monologue] monophonic analog synthesizer
-    \item[Cyclone Analogic TT-303] Roland TB-303 clone, monophonic analog synthesizer
-    \item[Roland TR8-S] drum machine and drum synthesizer, TR-909 emulator
+	\item [Akai MPC2000xl] sampler and sequencer
+	\item [Elektron Octatrack MKII] sampler and sequencer
+	\item[Korg Minilogue] polyphonic analog synthesizer
+	\item[Korg Monologue] monophonic analog synthesizer
+	\item[Cyclone Analogic TT-303] Roland TB-303 clone, monophonic analog synthesizer
+	\item[Roland TR8-S] drum machine and drum synthesizer, TR-909 emulator
 \end{description}
 \subsection{Effects}
 \begin{description}
-    \item[Strymong Volante] digital tape delay emulation pedal
-    \item[Alesis Quadraverb] programmable multi-effect
-    \item[Alesis Midiverb II] preprogrammed effect unit
+	\item[Strymong Volante] digital tape delay emulation pedal
+	\item[Alesis Quadraverb] programmable multi-effect
+	\item[Alesis Midiverb II] preprogrammed effect unit
 \end{description}
 
 %This is where endnotes are supposed to go, if you have them.
 %I have no idea how endnotes work with LaTeX.
 
-  \backmatter % backmatter makes the index and bibliography appear properly in the t.o.c...
+\backmatter % backmatter makes the index and bibliography appear properly in the t.o.c...
 
 % if you're using bibtex, the next line forces every entry in the bibtex file to be included
 % in your bibliography, regardless of whether or not you've cited it in the thesis.
@@ -723,7 +663,7 @@ For those interested, I have compiled a list of the tools I used through this pr
 % subfolder, e.g. 
 %\bibliographystyle{APA/apa-good}  % or
 %\bibliography{thesis}
- % Comment the above two lines and uncomment the next line to use biblatex-chicago.
+% Comment the above two lines and uncomment the next line to use biblatex-chicago.
 
 \printbibliography[heading=bibintoc,nottype=music,title={References}]
 \printbibliography[heading=subbibintoc,type=music,title={Discography}]
